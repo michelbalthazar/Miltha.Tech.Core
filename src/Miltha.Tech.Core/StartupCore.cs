@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Miltha.Tech.Core.Api.Configuration.Swagger;
 using Miltha.Tech.Core.Observability;
 using Miltha.Tech.Core.WebApi;
 
@@ -30,7 +29,7 @@ namespace Miltha.Tech.Core
             Configuration = builder.Build();
         }
 
-        protected void ConfigureDefaultServices(IServiceCollection services, string xmlCustomUISwaggerPath)
+        protected void ConfigureDefaultServices(IServiceCollection services)
         {
             services.RegisterMappings();
 
@@ -40,13 +39,11 @@ namespace Miltha.Tech.Core
 
             services.AddJwtConfiguration(Configuration);
 
-            services.AddSwaggerConfiguration(xmlCustomUISwaggerPath);
+            services.AddOpenApiConfiguration();
         }
 
         protected static void UseServices(IApplicationBuilder app)
         {
-            app.UseSwaggerConfiguration();
-
             app.UseApiConfiguration();
         }
     }

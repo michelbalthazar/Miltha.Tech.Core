@@ -72,7 +72,7 @@ namespace Miltha.Tech.Core.WebApi
                 .AddHttpMessageHandler<CorrelationIdPropagationHandler>()
                 .AddHttpMessageHandler<RequestAtPropagationHandler>();
 
-return services;
+            return services;
         }
 
         public static IApplicationBuilder UseApiConfiguration(this IApplicationBuilder app)
@@ -102,9 +102,10 @@ return services;
             app.UseAuthConfiguration();
 
             app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+                        {
+                            endpoints.MapControllers();
+                            endpoints.MapOpenApi();
+                        });
 
             return app;
         }
