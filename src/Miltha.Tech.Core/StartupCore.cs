@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Miltha.Tech.Core.Api.Configuration.Swagger;
+using Miltha.Tech.Core.Observability;
 using Miltha.Tech.Core.WebApi;
 
 namespace Miltha.Tech.Core
@@ -35,7 +36,7 @@ namespace Miltha.Tech.Core
 
             services.AddApiConfiguration();
 
-            services.AddLogging(Configuration);
+            services.AddObservability(Configuration);
 
             services.AddJwtConfiguration(Configuration);
 

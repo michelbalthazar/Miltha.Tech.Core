@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 using Microsoft.AspNetCore.ResponseCompression;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Miltha.Tech.Core.Http;
 using Miltha.Tech.Core.Pagination;
@@ -13,9 +12,6 @@ using Miltha.Tech.Core.WebApi.Converters;
 using Miltha.Tech.Core.WebApi.Cors;
 using Miltha.Tech.Core.WebApi.Handlers;
 using Miltha.Tech.Core.WebApi.HealthCheck;
-using Serilog;
-using Serilog.Exceptions;
-using Serilog.Sinks.SystemConsole.Themes;
 
 namespace Miltha.Tech.Core.WebApi
 {
@@ -76,28 +72,7 @@ namespace Miltha.Tech.Core.WebApi
                 .AddHttpMessageHandler<CorrelationIdPropagationHandler>()
                 .AddHttpMessageHandler<RequestAtPropagationHandler>();
 
-            return services;
-        }
-
-        public static IServiceCollection AddLogging(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddSingleton<ILogger>(sp =>
-            {
-                return Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Information()
-                .Enrich.FromLogContext()
-                .Enrich.WithExceptionDetails()
-                .Enrich.WithExceptionStackTraceHash()
-                .Enrich.WithEnvironmentName()
-                .Enrich.WithMachineName()
-                .Enrich.WithAssemblyName()
-                .Enrich.WithAssemblyVersion()
-                .WriteTo.Seq(configuration["Logging:Serilog:Url"])
-                .WriteTo.Console(theme: AnsiConsoleTheme.Sixteen)
-                .CreateLogger();
-            });
-
-            return services;
+return services;
         }
 
         public static IApplicationBuilder UseApiConfiguration(this IApplicationBuilder app)
