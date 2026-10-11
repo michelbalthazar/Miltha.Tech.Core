@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Miltha.Tech.Core.Result;
 using Serilog;
 
-namespace Miltha.Tech.Core.Api.Configuration
+namespace Miltha.Tech.Core.WebApi
 {
     public static class ExceptionHandlerConfigExtensions
     {

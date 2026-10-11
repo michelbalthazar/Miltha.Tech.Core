@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Miltha.Tech.Core.Extensions.Helper;
+using Miltha.Tech.Core.Http;
 using Serilog.Context;
 
 namespace Miltha.Tech.Core.Web.Middleware

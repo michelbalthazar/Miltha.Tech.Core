@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Miltha.Tech.Core.Api.Configuration
+namespace Miltha.Tech.Core.WebApi
 {
     public static class AutoMapperConfig
     {

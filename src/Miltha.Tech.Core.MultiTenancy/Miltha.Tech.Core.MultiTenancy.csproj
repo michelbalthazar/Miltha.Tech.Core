@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <ProjectReference Include="..\Miltha.Tech.Core.Extensions\Miltha.Tech.Core.Extensions.csproj" />
+    <ProjectReference Include="..\Miltha.Tech.Core.Http\Miltha.Tech.Core.Http.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Miltha.Tech.Core.Api.Configuration.Cors
+namespace Miltha.Tech.Core.WebApi.Cors
 {
     public static class CorsConfigExtensions
     {

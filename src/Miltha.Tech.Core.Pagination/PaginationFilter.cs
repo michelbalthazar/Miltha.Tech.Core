@@ -23,7 +23,7 @@
         /// <summary>
         /// The maximum page size allowed by the filter.
         /// </summary>
-        public const int MaxPageSize = 200;
+        public const int MaxPageSize = 100;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PaginationFilter"/> class using the default page number and size.

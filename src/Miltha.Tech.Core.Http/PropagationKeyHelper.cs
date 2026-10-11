@@ -1,4 +1,4 @@
-﻿namespace Miltha.Tech.Core.Helper
+﻿namespace Miltha.Tech.Core.Http
 {
     public static class PropagationKeyHelper
     {

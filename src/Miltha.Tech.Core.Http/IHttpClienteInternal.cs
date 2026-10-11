@@ -1,6 +1,6 @@
 ﻿using Miltha.Tech.Core.Result;
 
-namespace Miltha.Tech.Core.Helper
+namespace Miltha.Tech.Core.Http
 {
     public interface IHttpClienteInternal
     {

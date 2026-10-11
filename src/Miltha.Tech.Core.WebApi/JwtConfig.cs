@@ -1,14 +1,14 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using Miltha.Tech.Core.Settings;
+using Miltha.Tech.Core.Security;
 using Miltha.Tech.Core.Web.Middleware;
+using System.Text;
 
-namespace Miltha.Tech.Core.Api.Configuration
+namespace Miltha.Tech.Core.WebApi
 {
     public static class JwtConfig
     {

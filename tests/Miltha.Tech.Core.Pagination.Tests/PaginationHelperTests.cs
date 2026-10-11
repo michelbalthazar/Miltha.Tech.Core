@@ -1,5 +1,3 @@
-using Miltha.Tech.Core.Pagination;
-
 namespace Miltha.Tech.Core.Pagination.Tests;
 
 public class PaginationHelperTests

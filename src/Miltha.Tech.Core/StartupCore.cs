@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Miltha.Tech.Core.Api.Configuration;
 using Miltha.Tech.Core.Api.Configuration.Swagger;
+using Miltha.Tech.Core.WebApi;
 
 namespace Miltha.Tech.Core
 {

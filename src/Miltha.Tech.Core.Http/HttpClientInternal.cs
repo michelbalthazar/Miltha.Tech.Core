@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
-using Miltha.Tech.Core.Helper;
 using Miltha.Tech.Core.Result;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 
-namespace Miltha.Tech.Core.Extensions.Helper
+namespace Miltha.Tech.Core.Http
 {
     public class HttpClienteInternal : IHttpClienteInternal
     {

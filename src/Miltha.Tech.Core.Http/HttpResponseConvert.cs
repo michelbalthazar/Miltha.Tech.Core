@@ -3,7 +3,7 @@ using Miltha.Tech.Core.Result;
 using System.Net;
 using System.Text.Json;
 
-namespace Miltha.Tech.Core.Extensions.Helper
+namespace Miltha.Tech.Core.Http
 {
     public static class HttpResponseConvert
     {

@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Http;
-using Miltha.Tech.Core.Extensions.Helper;
-using Miltha.Tech.Core.Helper;
+using Miltha.Tech.Core.Http;
 
 namespace Miltha.Tech.Core.WebApi.Handlers
 {

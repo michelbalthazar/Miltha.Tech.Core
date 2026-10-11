@@ -1,25 +1,23 @@
 ﻿using Asp.Versioning;
-using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Miltha.Tech.Core.Api.Configuration.Converters;
-using Miltha.Tech.Core.Api.Configuration.Cors;
-using Miltha.Tech.Core.Api.Configuration.HealthCheck;
-using Miltha.Tech.Core.Extensions.Helper;
-using Miltha.Tech.Core.Helper;
+using Miltha.Tech.Core.Http;
 using Miltha.Tech.Core.Pagination;
 using Miltha.Tech.Core.Providers;
 using Miltha.Tech.Core.Providers.Interfaces;
 using Miltha.Tech.Core.Web.Middleware;
+using Miltha.Tech.Core.WebApi.Converters;
+using Miltha.Tech.Core.WebApi.Cors;
 using Miltha.Tech.Core.WebApi.Handlers;
+using Miltha.Tech.Core.WebApi.HealthCheck;
 using Serilog;
 using Serilog.Exceptions;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Miltha.Tech.Core.Api.Configuration
+namespace Miltha.Tech.Core.WebApi
 {
     public static class ApiConfigurationExtensions
     {
@@ -60,8 +58,6 @@ namespace Miltha.Tech.Core.Api.Configuration
 
             services.AddCorsConfiguration();
 
-            services.AddApplicationInsightsTelemetry();
-
             services.AddHealthCheckConfiguration();
 
             services.AddScoped<ITenantProvider, HttpContextTenantProvider>();
@@ -87,8 +83,6 @@ namespace Miltha.Tech.Core.Api.Configuration
         {
             services.AddSingleton<ILogger>(sp =>
             {
-                var telemetry = sp.GetRequiredService<TelemetryConfiguration>();
-
                 return Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
                 .Enrich.FromLogContext()
@@ -100,7 +94,6 @@ namespace Miltha.Tech.Core.Api.Configuration
                 .Enrich.WithAssemblyVersion()
                 .WriteTo.Seq(configuration["Logging:Serilog:Url"])
                 .WriteTo.Console(theme: AnsiConsoleTheme.Sixteen)
-                .WriteTo.ApplicationInsights(telemetry, TelemetryConverter.Events)
                 .CreateLogger();
             });
 

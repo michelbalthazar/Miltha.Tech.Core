@@ -32,22 +32,6 @@ namespace Miltha.Tech.Core.Web
             if (result.IsFailure)
                 return StatusCode(GetStatusCode(result.Error), result.Error);
 
-            return StatusCode((int)HttpStatusCode.NoContent, result.Value);
-        }
-
-        protected IActionResult AcceptedResponse<T>(Result<T> result)
-        {
-            if (result.IsFailure)
-                return StatusCode(GetStatusCode(result.Error), result.Error);
-
-            return StatusCode((int)HttpStatusCode.Accepted, result.Value);
-        }
-
-        protected IActionResult CustomResponse(Result.Result result)
-        {
-            if (result.IsFailure)
-                return StatusCode(GetStatusCode(result.Error), result.Error);
-
             return NoContent();
         }
 

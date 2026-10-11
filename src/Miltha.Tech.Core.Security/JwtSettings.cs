@@ -1,6 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 
-namespace Miltha.Tech.Core.Settings
+namespace Miltha.Tech.Core.Security
 {
     public class JwtSettings
     {

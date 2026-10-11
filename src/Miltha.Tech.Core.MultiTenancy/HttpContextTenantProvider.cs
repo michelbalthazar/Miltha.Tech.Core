@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Miltha.Tech.Core.Helper;
+using Miltha.Tech.Core.Http;
 using Miltha.Tech.Core.Providers.Interfaces;
 
 namespace Miltha.Tech.Core.Providers

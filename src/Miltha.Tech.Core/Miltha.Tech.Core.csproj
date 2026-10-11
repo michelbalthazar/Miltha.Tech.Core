@@ -15,6 +15,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Miltha.Tech.Core.Extensions\Miltha.Tech.Core.Extensions.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Http\Miltha.Tech.Core.Http.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.MultiTenancy\Miltha.Tech.Core.MultiTenancy.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Observability\Miltha.Tech.Core.Observability.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Pagination\Miltha.Tech.Core.Pagination.csproj" />

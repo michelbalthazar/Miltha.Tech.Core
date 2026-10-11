@@ -1,11 +1,11 @@
-﻿using System.Net.Mime;
-using System.Text.Json;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using System.Net.Mime;
+using System.Text.Json;
 
-namespace Miltha.Tech.Core.Api.Configuration.HealthCheck
+namespace Miltha.Tech.Core.WebApi.HealthCheck
 {
     public static class HealthCheckConfigExtensions
     {

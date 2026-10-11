@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Miltha.Tech.Core.Api.Configuration.Converters
+namespace Miltha.Tech.Core.WebApi.Converters
 {
     public class DateTimeConverter : JsonConverter<DateTime>
     {

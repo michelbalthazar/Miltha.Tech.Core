@@ -262,5 +262,5 @@ If this project helps you, consider giving it a star ⭐
 ---
 
 <p align="center">
-  Built with ❤️ using .NET
+  Built with using .NET
 </p>

@@ -9,7 +9,7 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Serilog" Version="4.0.0" />
-    <ProjectReference Include="..\Miltha.Tech.Core.Extensions\Miltha.Tech.Core.Extensions.csproj" />
+    <ProjectReference Include="..\Miltha.Tech.Core.Http\Miltha.Tech.Core.Http.csproj" />
     <ProjectReference Include="..\Miltha.Tech.Core.MultiTenancy\Miltha.Tech.Core.MultiTenancy.csproj" />
     <ProjectReference Include="..\Miltha.Tech.Core.Result\Miltha.Tech.Core.Result.csproj" />
   </ItemGroup>

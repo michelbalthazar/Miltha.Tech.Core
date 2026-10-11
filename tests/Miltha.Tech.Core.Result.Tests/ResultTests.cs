@@ -1,5 +1,3 @@
-using Miltha.Tech.Core.Result;
-
 namespace Miltha.Tech.Core.Result.Tests;
 
 public class ResultTests
