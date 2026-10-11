@@ -28,10 +28,12 @@ namespace Miltha.Tech.Core.WebApi
                     {
                         Title = "Miltha.Tech API",
                         Description = "Esta API faz parte da solução Miltha Tech.",
+                        Version = "v1",
                         Contact = new OpenApiContact { Name = "Miltha Tech" }
                     };
 
                     document.Components ??= new OpenApiComponents();
+                    document.Components.SecuritySchemes ??= new Dictionary<string, IOpenApiSecurityScheme>();
 
                     document.Components.SecuritySchemes["Bearer"] = new OpenApiSecurityScheme
                     {
@@ -42,6 +44,7 @@ namespace Miltha.Tech.Core.WebApi
                         Scheme = "Bearer"
                     };
 
+                    document.Security ??= new List<OpenApiSecurityRequirement>();
                     document.Security.Clear();
                     document.Security.Add(new OpenApiSecurityRequirement
                     {
