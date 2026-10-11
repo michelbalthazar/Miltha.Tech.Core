@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
+        <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+        <PackageReference Include="AutoMapper" Version="16.1.1" />
+        <PackageReference Include="Brazil.Data" Version="2.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Miltha.Tech.Core.Extensions\Miltha.Tech.Core.Extensions.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.MultiTenancy\Miltha.Tech.Core.MultiTenancy.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Observability\Miltha.Tech.Core.Observability.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Pagination\Miltha.Tech.Core.Pagination.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Result\Miltha.Tech.Core.Result.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Security\Miltha.Tech.Core.Security.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Validation\Miltha.Tech.Core.Validation.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.WebApi\Miltha.Tech.Core.WebApi.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Web\Miltha.Tech.Core.Web.csproj" />
+    </ItemGroup>
+
+</Project>

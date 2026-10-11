@@ -1,0 +1,30 @@
+<Project>
+
+  <!--
+    Shared packaging metadata and build settings for all Miltha.Tech.Core projects.
+
+    TargetFramework, ImplicitUsings and Nullable remain declared in each .csproj so that
+    a project can opt out without touching this file.
+  -->
+
+  <PropertyGroup>
+    <Authors>Miltha.Tech</Authors>
+    <Company>Miltha.Tech</Company>
+    <Product>Miltha.Tech.Core</Product>
+    <RepositoryUrl>https://github.com/michelbalthazar/Miltha.Tech.Core</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/michelbalthazar/Miltha.Tech.Core</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>0.1.0-preview.1</Version>
+  </PropertyGroup>
+
+  <!-- Symbol packages and XML documentation for consumers -->
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+</Project>

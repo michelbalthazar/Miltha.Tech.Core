@@ -1,0 +1,27 @@
+# Normalize text files to LF in the repository and on checkout
+* text=auto eol=lf
+
+# Explicit text types
+*.cs        text eol=lf
+*.csproj    text eol=lf
+*.sln       text eol=lf
+*.props     text eol=lf
+*.targets   text eol=lf
+*.json      text eol=lf
+*.config    text eol=lf
+*.md        text eol=lf
+*.yml       text eol=lf
+*.yaml      text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Binary files
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.snk   binary
+*.pfx   binary
+*.nupkg binary
+*.snupkg binary
