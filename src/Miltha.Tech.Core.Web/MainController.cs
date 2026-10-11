@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Miltha.Tech.Core.Result;
+using CoreResult = Miltha.Tech.Core.Result.Result;
 using System.Net;
 
 namespace Miltha.Tech.Core.Web
@@ -27,7 +28,31 @@ namespace Miltha.Tech.Core.Web
             return StatusCode((int)HttpStatusCode.Created, result.Value);
         }
 
-        protected IActionResult NoContentResponse<T>(Result<T> result)
+protected IActionResult NoContentResponse<T>(Result<T> result)
+        {
+            if (result.IsFailure)
+                return StatusCode(GetStatusCode(result.Error), result.Error);
+
+            return NoContent();
+        }
+
+        protected IActionResult OkResponse(CoreResult result)
+        {
+            if (result.IsFailure)
+                return StatusCode(GetStatusCode(result.Error), result.Error);
+
+            return Ok();
+        }
+
+        protected IActionResult CreatedResponse(CoreResult result)
+        {
+            if (result.IsFailure)
+                return StatusCode(GetStatusCode(result.Error), result.Error);
+
+            return StatusCode((int)HttpStatusCode.Created);
+        }
+
+        protected IActionResult NoContentResponse(CoreResult result)
         {
             if (result.IsFailure)
                 return StatusCode(GetStatusCode(result.Error), result.Error);
