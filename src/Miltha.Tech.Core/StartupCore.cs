@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Miltha.Tech.Core.Observability;
+using Miltha.Tech.Core.Security;
 using Miltha.Tech.Core.WebApi;
 
 namespace Miltha.Tech.Core

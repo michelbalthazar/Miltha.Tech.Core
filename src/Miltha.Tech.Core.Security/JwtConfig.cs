@@ -1,17 +1,23 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using Miltha.Tech.Core.Security;
-using Miltha.Tech.Core.Web.Middleware;
 using System.Text;
 
-namespace Miltha.Tech.Core.WebApi
+namespace Miltha.Tech.Core.Security
 {
+    /// <summary>
+    /// Centralizes the JWT/token configuration used by Miltha.Tech APIs.
+    /// </summary>
     public static class JwtConfig
     {
+        /// <summary>
+        /// Binds <see cref="JwtSettings"/>, applies the <see cref="IdentityOptions"/> password defaults
+        /// and registers JWT bearer authentication with the configured signing key.
+        /// </summary>
+        /// <param name="services">The service collection to register into.</param>
+        /// <param name="configuration">The application configuration used to read the <c>JwtSettings</c> section.</param>
         public static void AddJwtConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             var jwtAppSettingOptions = configuration.GetSection(nameof(JwtSettings));
@@ -56,13 +62,6 @@ namespace Miltha.Tech.Core.WebApi
                     ClockSkew = TimeSpan.Zero
                 };
             });
-        }
-
-        public static void UseAuthConfiguration(this IApplicationBuilder app)
-        {
-            app.UseAuthentication();
-            app.UseMiddleware<TenantResolutionMiddleware>();
-            app.UseAuthorization();
         }
 
         private static int ToInt(string value, int defaultValue) =>
