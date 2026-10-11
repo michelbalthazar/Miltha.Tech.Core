@@ -4,6 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
+    <Description>HTTP helpers and propagation utilities built on ASP.NET Core and the Result pattern.</Description>
   </PropertyGroup>
 
   <ItemGroup>

@@ -15,6 +15,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/michelbalthazar/Miltha.Tech.Core</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>miltha tech;dotnet;net10;library;core</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Version>0.1.0-preview.1</Version>
   </PropertyGroup>
 
@@ -26,5 +28,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
+
+  <!-- Include the repository README in every packable package -->
+  <ItemGroup Condition="'$(IsPackable)' != 'false'">
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>
