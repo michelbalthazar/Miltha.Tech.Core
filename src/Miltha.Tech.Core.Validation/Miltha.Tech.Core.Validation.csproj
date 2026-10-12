@@ -1,14 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
-        <Description>FluentValidation integration helpers (FluentValidator and null-entity builder).</Description>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="FluentValidation" Version="11.9.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Miltha.Tech.Core.Extensions\Miltha.Tech.Core.Extensions.csproj" />
     </ItemGroup>
 
 </Project>
