@@ -81,7 +81,7 @@ public class StringAndObjectExtensionsTests
     public void ToObject_ShouldDeserializeJson()
     {
         // Arrange
-        var json = "{\"name\":\"Miltha\"}";
+        var json = """"{"name":"Miltha"}"""";
 
         // Act
         var result = json.ToObject<SampleDto>();

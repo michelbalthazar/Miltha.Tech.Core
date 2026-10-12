@@ -8,6 +8,11 @@ namespace Miltha.Tech.Core.Extensions
 {
     public static class StringExtensions
     {
+        private static readonly JsonSerializerOptions _jsonSerializerOptions = new()
+        {
+            PropertyNameCaseInsensitive = true
+        };
+
         public static string DecodeFromBase64(this string base64)
         {
             if (string.IsNullOrWhiteSpace(base64))
@@ -137,12 +142,12 @@ namespace Miltha.Tech.Core.Extensions
             return message;
         }
 
-        public static T ToObject<T>(this string value)
+public static T ToObject<T>(this string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 return default;
 
-            return JsonSerializer.Deserialize<T>(value);
+            return JsonSerializer.Deserialize<T>(value, _jsonSerializerOptions);
         }
 
         /// <summary>
