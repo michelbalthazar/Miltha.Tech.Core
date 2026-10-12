@@ -50,6 +50,7 @@ namespace Miltha.Tech.Core.WebApi
                 options.JsonSerializerOptions.WriteIndented = true;
                 options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
                 options.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
+                options.JsonSerializerOptions.Converters.Add(new DateTimeOffsetConverter());
             });
 
             services.AddCorsConfiguration();

@@ -24,7 +24,7 @@ namespace Miltha.Tech.Core.WebApi.HealthCheck
                          var result = JsonSerializer.Serialize(
                             new
                             {
-                                currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                                currentTime = TimeProvider.System.GetUtcNow().ToString("yyyy-MM-dd HH:mm:ss 'Z'"),
                                 statusApplication = report.Status.ToString(),
                             });
 

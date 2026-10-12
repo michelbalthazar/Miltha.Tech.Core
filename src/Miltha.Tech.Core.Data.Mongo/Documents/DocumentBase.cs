@@ -23,6 +23,6 @@ namespace Miltha.Tech.Core.Data.Mongo.Documents
         public string ConcurrencyStamp { get; set; } = Guid.NewGuid().ToString();
 
         [RequiredDate]
-        public DateTime CreatedOn { get; set; }
+        public DateTimeOffset CreatedOn { get; set; }
     }
 }

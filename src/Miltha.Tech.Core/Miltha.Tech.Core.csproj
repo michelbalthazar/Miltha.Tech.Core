@@ -16,6 +16,7 @@
         <ProjectReference Include="..\Miltha.Tech.Core.Pagination\Miltha.Tech.Core.Pagination.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Result\Miltha.Tech.Core.Result.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Security\Miltha.Tech.Core.Security.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Time\Miltha.Tech.Core.Time.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Validation\Miltha.Tech.Core.Validation.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.WebApi\Miltha.Tech.Core.WebApi.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Web\Miltha.Tech.Core.Web.csproj" />

@@ -17,16 +17,10 @@
         public static bool IsValidValue(this DateTime? dateTime) =>
             dateTime.HasValue && dateTime > DateTime.MinValue;
 
+        /// <summary>
+        /// Convenience factory for a UTC <see cref="DateTime"/>.
+        /// </summary>
         public static DateTime FactoryDateTime(int year, int month, int day, int hour = 0, int minute = 0, int second = 0, int millisecond = 0, DateTimeKind kind = DateTimeKind.Utc) =>
             new(year, month, day, hour, minute, second, millisecond, kind);
-
-        /// <summary>
-        /// Default timezone is "E. South America Standard Time"
-        /// </summary>
-        /// <param name="dateTime">DateTime value to convert, recommended used: UtcNow</param>
-        /// <param name="timeZoneInfo">Timezone information</param>
-        /// <returns></returns>
-        public static DateTime ToDateTimeWithTimeZone(this DateTime dateTime, TimeZoneInfo? timeZoneInfo = null) =>
-            TimeZoneInfo.ConvertTimeFromUtc(dateTime.ToUniversalTime(), timeZoneInfo ?? TimeZoneInfo.FindSystemTimeZoneById("E. South America Standard Time"));
     }
 }

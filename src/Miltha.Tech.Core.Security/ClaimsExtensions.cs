@@ -18,5 +18,6 @@ namespace Miltha.Tech.Core.Security
         public const string DeviceId = "device_id";
         public const string MfaVerified = "mfa_verified";
         public const string MfaTime = "mfa_time";
+        public const string TimeZone = "tz";
     }
 }

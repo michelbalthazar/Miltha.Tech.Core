@@ -118,7 +118,7 @@ namespace Miltha.Tech.Core.Data.Mongo.Base
         protected virtual void PrepareForInsert(TDocument document)
         {
             document.CreatedOn = document.CreatedOn == default
-                ? DateTime.UtcNow
+                ? DateTimeOffset.UtcNow
                 : document.CreatedOn;
 
             document.ConcurrencyStamp ??= Guid.NewGuid().ToString();
