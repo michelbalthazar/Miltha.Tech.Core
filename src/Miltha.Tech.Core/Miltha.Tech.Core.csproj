@@ -8,11 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
-        <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\Miltha.Tech.Core.Extensions\Miltha.Tech.Core.Extensions.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Data.Mongo\Miltha.Tech.Core.Data.Mongo.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Http\Miltha.Tech.Core.Http.csproj" />
