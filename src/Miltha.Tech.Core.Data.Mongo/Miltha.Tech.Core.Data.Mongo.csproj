@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Description>MongoDB abstractions: document bases, base repositories and settings for Miltha.Tech applications.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="3.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Miltha.Tech.Core.MultiTenancy\Miltha.Tech.Core.MultiTenancy.csproj" />
+    <ProjectReference Include="..\Miltha.Tech.Core.Pagination\Miltha.Tech.Core.Pagination.csproj" />
+    <ProjectReference Include="..\Miltha.Tech.Core.Validation\Miltha.Tech.Core.Validation.csproj" />
+  </ItemGroup>
+
+</Project>
