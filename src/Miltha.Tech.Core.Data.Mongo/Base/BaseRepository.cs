@@ -1,10 +1,10 @@
-﻿using System.Linq.Expressions;
+using System.Linq.Expressions;
 using Miltha.Tech.Core.Pagination;
-using Miltha.Tech.Data.Mongo.Documents;
-using Miltha.Tech.Data.Mongo.Extensions;
+using Miltha.Tech.Core.Data.Mongo.Documents;
+using Miltha.Tech.Core.Data.Mongo.Extensions;
 using MongoDB.Driver;
 
-namespace Miltha.Tech.Data.Mongo.Base
+namespace Miltha.Tech.Core.Data.Mongo.Base
 {
     public abstract class BaseRepository<TDocument> where TDocument : DocumentBase
     {

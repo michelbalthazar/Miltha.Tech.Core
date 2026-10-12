@@ -1,6 +1,6 @@
 using Miltha.Tech.Core.Validation;
 
-namespace Miltha.Tech.Data.Mongo.Documents
+namespace Miltha.Tech.Core.Data.Mongo.Documents
 {
     public record DocumentTenantBase : DocumentBase
     {

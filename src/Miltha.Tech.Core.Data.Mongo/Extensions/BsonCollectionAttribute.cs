@@ -1,4 +1,4 @@
-﻿namespace Miltha.Tech.Data.Mongo.Extensions
+namespace Miltha.Tech.Core.Data.Mongo.Extensions
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
     public sealed class BsonCollectionAttribute : Attribute

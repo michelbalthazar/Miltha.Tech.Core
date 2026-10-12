@@ -1,9 +1,9 @@
-﻿using System.Security;
+using System.Security;
 using Miltha.Tech.Core.Providers.Interfaces;
-using Miltha.Tech.Data.Mongo.Documents;
+using Miltha.Tech.Core.Data.Mongo.Documents;
 using MongoDB.Driver;
 
-namespace Miltha.Tech.Data.Mongo.Base
+namespace Miltha.Tech.Core.Data.Mongo.Base
 {
     public abstract class TenantBaseRepository<TDocument> : BaseRepository<TDocument> where TDocument : DocumentTenantBase
     {

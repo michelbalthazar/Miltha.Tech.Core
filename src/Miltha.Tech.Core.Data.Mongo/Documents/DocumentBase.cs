@@ -1,7 +1,7 @@
 using Miltha.Tech.Core.Validation;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Miltha.Tech.Data.Mongo.Documents
+namespace Miltha.Tech.Core.Data.Mongo.Documents
 {
     public record DocumentBase
     {

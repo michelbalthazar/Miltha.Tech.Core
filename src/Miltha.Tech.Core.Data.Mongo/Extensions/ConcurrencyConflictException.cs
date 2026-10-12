@@ -1,6 +1,6 @@
-﻿using System.Net;
+using System.Net;
 
-namespace Miltha.Tech.Data.Mongo.Extensions
+namespace Miltha.Tech.Core.Data.Mongo.Extensions
 {
     public sealed class ConcurrencyConflictException : Exception
     {

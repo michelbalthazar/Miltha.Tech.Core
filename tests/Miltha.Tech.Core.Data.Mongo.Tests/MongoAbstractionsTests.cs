@@ -1,6 +1,6 @@
 using System.Net;
-using Miltha.Tech.Data.Mongo.Extensions;
-using Miltha.Tech.Data.Mongo.Settings;
+using Miltha.Tech.Core.Data.Mongo.Extensions;
+using Miltha.Tech.Core.Data.Mongo.Settings;
 
 namespace Miltha.Tech.Core.Data.Mongo.Tests;
 

@@ -1,9 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Miltha.Tech.Data.Mongo.Settings;
+using Miltha.Tech.Core.Data.Mongo.Settings;
 using MongoDB.Driver;
 
-namespace Miltha.Tech.Data.Mongo.Configuration
+namespace Miltha.Tech.Core.Data.Mongo.Configuration
 {
     public static class DatabaseConfigurationExtensions
     {
