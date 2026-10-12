@@ -1,10 +1,10 @@
-﻿using System.Globalization;
+﻿using Miltha.Tech.Core.Extensions;
+using System.Globalization;
 using System.Security;
 using System.Text;
 using System.Text.Json;
-using Miltha.Tech.Core.Extensions;
 
-namespace System
+namespace Miltha.Tech.Core.Extensions
 {
     public static class StringExtensions
     {
@@ -24,7 +24,7 @@ namespace System
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(text));
         }
 
-public static bool IsCnpj(this string value) => value != null && BrazilDocumentValidator.IsValidCnpj(value);
+        public static bool IsCnpj(this string value) => value != null && BrazilDocumentValidator.IsValidCnpj(value);
 
         public static bool IsCpf(this string value) => value != null && BrazilDocumentValidator.IsValidCpf(value.OnlyNumbers());
 

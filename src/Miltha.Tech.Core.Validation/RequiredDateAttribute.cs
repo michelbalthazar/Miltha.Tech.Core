@@ -1,3 +1,4 @@
+using Miltha.Tech.Core.Extensions;
 using System.ComponentModel.DataAnnotations;
 
 namespace Miltha.Tech.Core.Validation
