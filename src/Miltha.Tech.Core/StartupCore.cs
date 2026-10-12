@@ -32,8 +32,6 @@ namespace Miltha.Tech.Core
 
         protected void ConfigureDefaultServices(IServiceCollection services)
         {
-            services.RegisterMappings();
-
             services.AddApiConfiguration();
 
             services.AddObservability(Configuration);
