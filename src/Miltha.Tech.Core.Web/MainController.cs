@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Miltha.Tech.Core.Http;
 using Miltha.Tech.Core.Result;
 using CoreResult = Miltha.Tech.Core.Result.Result;
 using System.Net;
@@ -15,7 +16,7 @@ namespace Miltha.Tech.Core.Web
         protected IActionResult OkResponse<T>(Result<T> result)
         {
             if (result.IsFailure)
-                return StatusCode(GetStatusCode(result.Error), result.Error);
+                return ErrorResponse(result.Error);
 
             return StatusCode((int)HttpStatusCode.OK, result.Value);
         }
@@ -23,15 +24,15 @@ namespace Miltha.Tech.Core.Web
         protected IActionResult CreatedResponse<T>(Result<T> result)
         {
             if (result.IsFailure)
-                return StatusCode(GetStatusCode(result.Error), result.Error);
+                return ErrorResponse(result.Error);
 
             return StatusCode((int)HttpStatusCode.Created, result.Value);
         }
 
-protected IActionResult NoContentResponse<T>(Result<T> result)
+        protected IActionResult NoContentResponse<T>(Result<T> result)
         {
             if (result.IsFailure)
-                return StatusCode(GetStatusCode(result.Error), result.Error);
+                return ErrorResponse(result.Error);
 
             return NoContent();
         }
@@ -39,7 +40,7 @@ protected IActionResult NoContentResponse<T>(Result<T> result)
         protected IActionResult OkResponse(CoreResult result)
         {
             if (result.IsFailure)
-                return StatusCode(GetStatusCode(result.Error), result.Error);
+                return ErrorResponse(result.Error);
 
             return Ok();
         }
@@ -47,7 +48,7 @@ protected IActionResult NoContentResponse<T>(Result<T> result)
         protected IActionResult CreatedResponse(CoreResult result)
         {
             if (result.IsFailure)
-                return StatusCode(GetStatusCode(result.Error), result.Error);
+                return ErrorResponse(result.Error);
 
             return StatusCode((int)HttpStatusCode.Created);
         }
@@ -55,21 +56,25 @@ protected IActionResult NoContentResponse<T>(Result<T> result)
         protected IActionResult NoContentResponse(CoreResult result)
         {
             if (result.IsFailure)
-                return StatusCode(GetStatusCode(result.Error), result.Error);
+                return ErrorResponse(result.Error);
 
             return NoContent();
         }
 
-        private static int GetStatusCode(Error error) =>
-            error.Type switch
+        private IActionResult ErrorResponse(Error error)
+        {
+            var traceId = Request.Headers.GetCorrelationId();
+
+            if (string.IsNullOrWhiteSpace(traceId))
+                traceId = HttpContext.TraceIdentifier;
+
+            var response = ApiErrorResponse.From(error, Request.Path.Value, traceId);
+
+            return new ObjectResult(response)
             {
-                ErrorType.Validation => (int)HttpStatusCode.BadRequest,
-                ErrorType.Unauthorized => (int)HttpStatusCode.Unauthorized,
-                ErrorType.Forbidden => (int)HttpStatusCode.Forbidden,
-                ErrorType.NotFound => (int)HttpStatusCode.NotFound,
-                ErrorType.Conflict => (int)HttpStatusCode.Conflict,
-                ErrorType.Unexpected => (int)HttpStatusCode.InternalServerError,
-                _ => (int)HttpStatusCode.UnprocessableEntity
+                StatusCode = response.Status,
+                ContentTypes = { ApiErrorResponse.ContentType }
             };
+        }
     }
 }
