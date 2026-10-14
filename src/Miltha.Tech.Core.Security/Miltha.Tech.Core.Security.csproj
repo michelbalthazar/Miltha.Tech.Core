@@ -4,6 +4,7 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
+        <Description>Security primitives for Miltha.Tech APIs: JWT/token configuration, roles, claims helpers and authorization setup.</Description>
     </PropertyGroup>
 
     <ItemGroup>

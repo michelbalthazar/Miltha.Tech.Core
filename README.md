@@ -84,3 +84,20 @@ dotnet pack Miltha.Tech.Core.sln -c Release -o ./artifacts
 ## License
 
 MIT - see [LICENSE](LICENSE).
+
+## Versionamento e publicação (SemVer)
+
+Os pacotes seguem **Semantic Versioning** (`MAJOR.MINOR.PATCH[-prerelease]`):
+
+- **MAJOR**: mudança incompatível (quebra de contrato público).
+- **MINOR**: novas funcionalidades retrocompatíveis.
+- **PATCH**: correções retrocompatíveis.
+- **Pré-release**: sufixos como `-preview.N` enquanto a superfície pública evolui.
+
+Todos os módulos compartilham a **mesma versão** (versionamento uniforme). A publicação é feita por
+**tag** `v*` (ex.: `v0.1.0-preview.7`) → workflow `core-publish.yml` empacota com a versão da tag e
+publica no GitHub Packages. Cada pacote inclui **símbolos** (`.snupkg`), **documentação XML** e o
+**README**; licença **MIT** (`PackageLicenseExpression`).
+
+> Compatibilidade: módulos folha (`Result`, `Extensions`, `Observability`, `Pagination`, `Time`) são
+> estáveis; alterações neles merecem atenção de SemVer por serem amplamente referenciados.

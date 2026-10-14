@@ -4,6 +4,7 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
+        <Description>Validation building blocks for Miltha.Tech: FluentValidation integration and custom required/CPF/CNPJ attributes.</Description>
     </PropertyGroup>
 
     <ItemGroup>
