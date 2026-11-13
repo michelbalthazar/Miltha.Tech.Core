@@ -11,10 +11,12 @@ independent NuGet packages so each consumer references only what it needs.
 
 | Package | Purpose |
 | --- | --- |
-| `Miltha.Tech.Core` | Meta-package that references all modules below |
+| `Miltha.Tech.Core` | Meta-package that references the shared modules below (RabbitMQ adapter is opt-in) |
 | `Miltha.Tech.Core.Result` | Result pattern primitives (`Result`, `Result<T>`, `Error`) |
 | `Miltha.Tech.Core.Extensions` | Pure BCL helpers and cryptography (no web dependency) |
 | `Miltha.Tech.Core.Http` | HTTP helpers and propagation built on ASP.NET Core |
+| `Miltha.Tech.Core.Messaging` | Broker-agnostic publisher, consumer and message envelope contracts |
+| `Miltha.Tech.Core.Messaging.RabbitMq` | Opt-in RabbitMQ adapter with publisher confirms, manual ack and DLQ |
 | `Miltha.Tech.Core.Pagination` | Pagination models and helpers |
 | `Miltha.Tech.Core.Validation` | FluentValidation integration helpers |
 | `Miltha.Tech.Core.Security` | Security contracts and JWT bearer configuration |
@@ -33,7 +35,30 @@ dotnet add package Miltha.Tech.Core
 dotnet add package Miltha.Tech.Core.Result
 dotnet add package Miltha.Tech.Core.Pagination
 dotnet add package Miltha.Tech.Core.Http
+
+# opt-in RabbitMQ adapter (not included in the meta-package)
+dotnet add package Miltha.Tech.Core.Messaging.RabbitMq
 ```
+
+The meta-package references `Miltha.Tech.Core.Messaging` (abstractions only). The RabbitMQ
+adapter is intentionally opt-in so consumers that do not use a broker do not inherit the
+`RabbitMQ.Client` dependency.
+
+### RabbitMQ messaging
+
+```csharp
+services.AddRabbitMqMessaging(options =>
+{
+    options.ConnectionString = "amqp://guest:guest@localhost:5672/";
+    options.ExchangeName = "miltha.events";
+    options.QueueName = "miltha.operations";
+    options.PrefetchCount = 10;
+});
+```
+
+Resolve `IMessagePublisher` to publish and `IMessageConsumer` to consume. Publishers wait for
+broker confirms; consumers acknowledge manually and route `MessageDisposition.Reject` to the
+configured dead-letter queue.
 
 ## Usage
 

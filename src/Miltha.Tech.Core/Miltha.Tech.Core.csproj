@@ -4,13 +4,14 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>disable</Nullable>
-        <Description>Meta-package that references all Miltha.Tech.Core modules.</Description>
+        <Description>Meta-package that references the shared Miltha.Tech.Core modules; the RabbitMQ adapter is opt-in.</Description>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Miltha.Tech.Core.Extensions\Miltha.Tech.Core.Extensions.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Data.Mongo\Miltha.Tech.Core.Data.Mongo.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Http\Miltha.Tech.Core.Http.csproj" />
+        <ProjectReference Include="..\Miltha.Tech.Core.Messaging\Miltha.Tech.Core.Messaging.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.MultiTenancy\Miltha.Tech.Core.MultiTenancy.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Observability\Miltha.Tech.Core.Observability.csproj" />
         <ProjectReference Include="..\Miltha.Tech.Core.Pagination\Miltha.Tech.Core.Pagination.csproj" />
